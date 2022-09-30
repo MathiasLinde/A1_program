@@ -2,6 +2,25 @@ public class FightPhase {
     public static void main(String[] args) {
         int hits = 0;
         int wounds = 0;
+
+
+        int addtohit = +1;
+        int addtowound = +1;
+        int subracttohit = -1;
+        int subracttowound = -1;
+        /*
+
+
+
+
+         */
+        boolean plustohit = false;
+        boolean minustohit = false;
+        boolean plustowound = false;
+        boolean minustowound = false;
+
+
+
         System.out.println("Please select the attacking unit ");
         System.out.println("Press 1 to attack with ork boyz");
         System.out.println("Press 2 to attack with ork nobz");
@@ -41,20 +60,20 @@ public class FightPhase {
                 int woundroll = D6.die();
                 if(T==S)
                 {
-                    if(woundroll >= 4){
+                    if(woundroll >= 4 && woundroll!=1){
                         wounds++;
                     }
                 }else if(T>S){
-                    if (woundroll >=5 ) {
+                    if (woundroll >=5 && woundroll!=1 ) {
                         wounds++;
-                    } }else if (T/2 >=S ){
+                    } }else if (T/2 >=S && woundroll!=1 ){
                         if (woundroll >= 6) {
                             wounds++;
-                        }  }else if (T<S){
+                        }  }else if (T<S && woundroll!=1){
                             if(woundroll>=3){
                                 wounds++;
                             }
-                        }else if (S/2>=T){
+                        }else if (S/2 >= T && woundroll!=1){
                             if (woundroll>=2){
                                 wounds++;
                             }

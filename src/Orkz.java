@@ -1,78 +1,78 @@
 public class Orkz {
 
-    public static int boyzws()
+    static int boyzws()
     {
         int ws = 3;
 
         return ws;
     }
-    public static int boyzbs()
+     static int boyzbs()
     {
         int ws = 5;
 
         return ws;
     }
-    public static int boyzstr()
+     static int boyzstr()
     {
         int str = 4;
         return str;
     }
-    public static int boyzatk()
+     static int boyzatk()
     {
         int A = 3;
         return A;
     }
 
 
-    public static int nobzws()
+     static int nobzws()
     {
         int ws = 3;
 
         return ws;
     }
-    public static int nobzbs()
+     static int nobzbs()
     {
         int bs = 5;
 
         return bs;
     }
-    public static int nobzwsklaw()
+    static int nobzwsklaw()
     {
         int ws = 4;
 
         return ws;
     }
-    public static int nobzstrbigchoppa()
+     static int nobzstrbigchoppa()
     {
         int str = 5;
         return str;
     }
-    public static int nobzstrklaw()
+     static int nobzstrklaw()
     {
         int str =5*2;
 
         return str;
     }
 
-    public static int warbossws()
+     static int warbossws()
     {
         int ws = 2;
 
         return ws;
     }
-    public static int warbossbs()
+     static int warbossbs()
     {
         int bs = 5;
 
         return bs;
     }
-    public static int warbossmegaarmorstr()
+     static int warbossmegaarmorstr()
     {
         int str = 6+3;
 
         return str;
     }
-    public static int  warbossmegaarmoratk()
+     static int  warbossmegaarmoratk()
     {
         int A = 5;
         return A;
