@@ -57,24 +57,33 @@ public class FightPhase {
             int S = Orkz.boyzstr();
 
             for (int i = 0; i < hits; i++) {
-                int woundroll = D6.die();
+                boolean modiferwoundroll = false;
+                int modifier = 0;
+
+                if (modiferwoundroll == true){
+                    modifier = 1;
+                }
+
+
+                int unmodifiedrollwound = D6.die();
+                int rollwound = unmodifiedrollwound + modifier;
                 if(T==S)
                 {
-                    if(woundroll >= 4 && woundroll!=1){
+                    if(rollwound >= 4 && rollwound!=1&& unmodifiedrollwound != 0){
                         wounds++;
                     }
                 }else if(T>S){
-                    if (woundroll >=5 && woundroll!=1 ) {
+                    if (rollwound >=5 && rollwound!=1 ) {
                         wounds++;
-                    } }else if (T/2 >=S && woundroll!=1 ){
-                        if (woundroll >= 6) {
+                    } }else if (T/2 >=S && rollwound!=1 ){
+                        if (rollwound >= 6) {
                             wounds++;
-                        }  }else if (T<S && woundroll!=1){
-                            if(woundroll>=3){
+                        }  }else if (T<S && rollwound!=1){
+                            if(rollwound>=3){
                                 wounds++;
                             }
-                        }else if (S/2 >= T && woundroll!=1){
-                            if (woundroll>=2){
+                        }else if (S/2 >= T ){
+                            if (rollwound>=2){
                                 wounds++;
                             }
                         }
