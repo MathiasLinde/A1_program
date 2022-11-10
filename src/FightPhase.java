@@ -1,10 +1,11 @@
+import org.junit.jupiter.api.Test;
+
 public class FightPhase {
     public static void main(String[] args) {
         int hits = 0;
         int wounds = 0;
 
-
-        int addtohit = +1;
+int addtohit = +1;
         int addtowound = +1;
         int subracttohit = -1;
         int subracttowound = -1;
