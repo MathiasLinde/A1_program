@@ -1,5 +1,3 @@
-import org.junit.jupiter.api.Test;
-
 public class FightPhase {
     public static void main(String[] args) {
         int hits = 0;
@@ -11,29 +9,31 @@ public class FightPhase {
         int subracttowound = -1;
 
  */
-        /*
-
-
-
-
-         */
         boolean plustohit = false;
         boolean minustohit = false;
         boolean plustowound = false;
         boolean minustowound = false;
 
+        DataSheetFactory kage = new  DataSheetFactory();
+        int s = kage.getStrength();
 
 
+
+
+
+/*
         System.out.println("Please select the attacking unit ");
         System.out.println("Press 1 to attack with ork boyz");
         System.out.println("Press 2 to attack with ork nobz");
         System.out.println("Press 3 to attack with a Warboss in mega armour");
         int u = Input.inputint();
+        */
         int modifier = 0;
 
-        if(plustohit == true) modifier=1;
+        if(plustohit == true) modifier = 1;
         if (minustohit == true ) modifier = -1;
-
+        if (plustowound == true) modifier = 1;
+        if (minustowound==true) modifier = -1;
 
             System.out.println("How many models those the unit have?");
             int nr = Input.inputint();
@@ -63,19 +63,14 @@ public class FightPhase {
             System.out.println("7. for T9 target");
             */
 
+
             int t = Input.inputint();
-            int s = Orkz.boyzstr();
             modifier = 0;
 
             for (int i = 0; i < hits; i++) {
 
 
-                if (plustowound == true){
-                    modifier = 1;
-                }
-                if (minustowound==true){
-                    modifier = -1;
-                }
+
 
                 int unmodifiedrollwound = D6.die();
                 int rollwound = unmodifiedrollwound + modifier;
