@@ -4,11 +4,13 @@ public class FightPhase {
     public static void main(String[] args) {
         int hits = 0;
         int wounds = 0;
-
-int addtohit = +1;
+/*
+        int addtohit = +1;
         int addtowound = +1;
         int subracttohit = -1;
         int subracttowound = -1;
+
+ */
         /*
 
 
@@ -27,14 +29,21 @@ int addtohit = +1;
         System.out.println("Press 2 to attack with ork nobz");
         System.out.println("Press 3 to attack with a Warboss in mega armour");
         int u = Input.inputint();
-        if (u == 1) {
+        int modifier = 0;
+
+        if(plustohit == true) modifier=1;
+        if (minustohit == true ) modifier = -1;
+
+
             System.out.println("How many models those the unit have?");
             int nr = Input.inputint();
             int a = Orkz.boyzatk();
             int ws = Orkz.boyzws();
             int A = a * nr;
+
+
             for (int i = 0; i < A; i++) {
-                int hitroll = D6.die();
+                int hitroll = D6.die() + modifier;
                 if (hitroll >= ws) {
                     hits++;
                 }
@@ -54,36 +63,38 @@ int addtohit = +1;
             System.out.println("7. for T9 target");
             */
 
-            int T = Input.inputint();
-            int S = Orkz.boyzstr();
+            int t = Input.inputint();
+            int s = Orkz.boyzstr();
+            modifier = 0;
 
             for (int i = 0; i < hits; i++) {
-                boolean modiferwoundroll = false;
-                int modifier = 0;
 
-                if (modiferwoundroll == true){
+
+                if (plustowound == true){
                     modifier = 1;
                 }
-
+                if (minustowound==true){
+                    modifier = -1;
+                }
 
                 int unmodifiedrollwound = D6.die();
                 int rollwound = unmodifiedrollwound + modifier;
-                if(T==S)
+                if(t==s)
                 {
-                    if(rollwound >= 4 && rollwound!=1&& unmodifiedrollwound != 0){
+                    if(rollwound >= 4 && rollwound!=1&& unmodifiedrollwound != 1){
                         wounds++;
                     }
-                }else if(T>S){
-                    if (rollwound >=5 && rollwound!=1 ) {
+                }else if(t>s){
+                    if (rollwound >=5 && unmodifiedrollwound != 1 ) {
                         wounds++;
-                    } }else if (T/2 >=S && rollwound!=1 ){
+                    } }else if (t/2 >=s && unmodifiedrollwound != 1 ){
                         if (rollwound >= 6) {
                             wounds++;
-                        }  }else if (T<S && rollwound!=1){
+                        }  }else if (t<s && rollwound != 1){
                             if(rollwound>=3){
                                 wounds++;
                             }
-                        }else if (S/2 >= T ){
+                        }else if (s/2 >= t ){
                             if (rollwound>=2){
                                 wounds++;
                             }
@@ -91,10 +102,10 @@ int addtohit = +1;
 
 
                 }
-            System.out.println("You wound a total of "+wounds +" times" );
+            System.out.println("You wound a total of " + wounds + " times" );
             }
 
 
         }
-    }
+
 
